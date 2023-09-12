@@ -1,0 +1,5 @@
+.box-principal {
+    display: grid;
+    align-items: start;
+    gap: 5px;
+}

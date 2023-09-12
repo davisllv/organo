@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Banner from "./components/Banner/banner";
+import InputTexto from "./components/InputTexto/InputTexto";
+import Select from "./components/Select/Select";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Banner />
+
+      <div className="divisor">
+        <h1>Preencha os dados para Criar o Card do Colaborador</h1>
+        <InputTexto label="Nome" placeholder="Digite seu nome" name="nome" />
+        <InputTexto label="Cargo" placeholder="Digite seu cargo" name="cargo" />
+        <InputTexto
+          label="Image"
+          placeholder="Informe Endereço da Sua Image"
+          name="imagem"
+        />
+
+        <Select
+          name="time"
+          label="Time"
+          options={[
+            { value: "gremio", descricao: "Grêmio" },
+            { value: "inter", descricao: "Inter" },
+          ]}
+        />
+      </div>
     </div>
   );
 }
