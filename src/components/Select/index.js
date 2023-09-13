@@ -8,7 +8,11 @@ function Select(props) {
       </div>
 
       <div>
-        <select name={props.name} className="select-suspenso">
+        <select
+          required={props.required}
+          name={props.name}
+          className="select-suspenso"
+        >
           {props.options.map((option) => {
             return (
               <option key={option.value} value={option.value}>

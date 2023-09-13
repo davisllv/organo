@@ -4,12 +4,26 @@ import Select from "../Select";
 import Botao from "../Botao";
 
 const Formulario = () => {
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    console.log("Form foi Submitido");
+  };
   return (
     <section className="divisor">
       <h1>Preencha os Dados para Criar o Card do Colaborador</h1>
-      <form className="formulario">
-        <InputTexto label="Nome" placeholder="Digite seu nome" name="nome" />
-        <InputTexto label="Cargo" placeholder="Digite seu cargo" name="cargo" />
+      <form className="formulario" onSubmit={handleSubmit}>
+        <InputTexto
+          required
+          label="Nome"
+          placeholder="Digite seu nome"
+          name="nome"
+        />
+        <InputTexto
+          label="Cargo"
+          required
+          placeholder="Digite seu cargo"
+          name="cargo"
+        />
         <InputTexto
           label="Image"
           placeholder="Informe Endereço da Sua Image"
@@ -17,6 +31,7 @@ const Formulario = () => {
         />
 
         <Select
+          required
           name="time"
           label="Time"
           options={[
@@ -25,7 +40,7 @@ const Formulario = () => {
           ]}
         />
 
-        <Botao label={"Criar Card"} />
+        <Botao>Criar Card</Botao>
       </form>
     </section>
   );

@@ -7,7 +7,11 @@ const InputTexto = (props) => {
         <span>{props.label}</span>
       </div>
       <div className="box-input">
-        <input name={props.name} placeholder={props.placeholder} />
+        <input
+          required={props.required}
+          name={props.name}
+          placeholder={props.placeholder}
+        />
       </div>
     </div>
   );
