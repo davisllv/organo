@@ -1,6 +1,7 @@
 import "./styles.css";
 import InputTexto from "../InputTexto";
 import Select from "../Select";
+import Botao from "../Botao";
 
 const Formulario = () => {
   return (
@@ -23,6 +24,8 @@ const Formulario = () => {
             { value: "inter", descricao: "Inter" },
           ]}
         />
+
+        <Botao label={"Criar Card"} />
       </form>
     </section>
   );

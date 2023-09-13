@@ -1,0 +1,13 @@
+.box-select {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.select-suspenso {
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 8px;
+
+}
