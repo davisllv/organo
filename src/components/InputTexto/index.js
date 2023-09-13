@@ -1,6 +1,6 @@
-import "./InputTexto.css";
+import "./styles.css";
 
-function InputTexto(props) {
+const InputTexto = (props) => {
   return (
     <div className="box-principal">
       <div>
@@ -11,6 +11,6 @@ function InputTexto(props) {
       </div>
     </div>
   );
-}
+};
 
 export default InputTexto;

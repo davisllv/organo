@@ -1,3 +1,5 @@
+import "./styles.css";
+
 function Select(props) {
   return (
     <>
