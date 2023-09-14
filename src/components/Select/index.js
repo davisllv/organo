@@ -9,8 +9,10 @@ function Select(props) {
 
       <div>
         <select
+          value={props.valor}
           required={props.required}
           name={props.name}
+          onChange={(evento) => props.handleAlterar(evento.target.value)}
           className="select-suspenso"
         >
           {props.options.map((option) => {

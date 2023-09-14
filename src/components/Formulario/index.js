@@ -4,14 +4,30 @@ import InputTexto from "../InputTexto";
 import Select from "../Select";
 import Botao from "../Botao";
 
-const Formulario = () => {
+function handleCriarId() {
+  return `${Math.random().toString(16).slice(2)}-${Math.random()
+    .toString(16)
+    .slice(2)}`;
+}
+
+const Formulario = (props) => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
+  const [time, setTime] = useState("gremio");
 
-  const handleSubmit = (ev) => {
-    ev.preventDefault();
-    console.log("Form foi Submitido");
+  const handleSubmit = (evento) => {
+    const id = handleCriarId();
+
+    const dados = {
+      id,
+      nome,
+      cargo,
+      imagem,
+      time,
+    };
+    evento.preventDefault();
+    props.handleSubmit(dados);
   };
 
   return (
@@ -46,6 +62,8 @@ const Formulario = () => {
           required
           name="time"
           label="Time"
+          valor={time}
+          handleAlterar={(valor) => setTime(valor)}
           options={[
             { value: "gremio", descricao: "Grêmio" },
             { value: "inter", descricao: "Inter" },
