@@ -3,7 +3,7 @@ import "./styles.css";
 function Select(props) {
   return (
     <div className="box-select">
-      <div>
+      <div className="box-label">
         <span>{props.label}</span>
       </div>
 

@@ -4,6 +4,11 @@
     margin-bottom: 10px;
 }
 
+.box-label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
 .select-suspenso {
     border: none;
     padding: 1rem;
