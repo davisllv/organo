@@ -1,23 +1,25 @@
 import Card from "../Card";
 import "./time.css";
 
-const Time = (props) => {
-  const { valores } = props;
+const Time = ({ valores, listaColadoradores }) => {
   return (
-    <section
-      className="time"
-      style={{ backgroundColor: valores.corSecundaria }}
-    >
-      <h3 style={{ borderColor: `${valores.corPrimaria}` }}>{valores.nome}</h3>
+    listaColadoradores &&
+    listaColadoradores.length > 0 && (
+      <section
+        className="time"
+        style={{ backgroundColor: valores.corSecundaria }}
+      >
+        <h3 style={{ borderColor: `${valores.corPrimaria}` }}>
+          {valores.nome}
+        </h3>
 
-      <div className="cards">
-        {props.listaColadoradores
-          .filter((col) => col.time === valores.value)
-          .map((col) => {
-            return <Card user={col} />;
+        <div className="cards">
+          {listaColadoradores.map((col) => {
+            return <Card key={col.id} user={col} />;
           })}
-      </div>
-    </section>
+        </div>
+      </section>
+    )
   );
 };
 

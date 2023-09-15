@@ -47,7 +47,6 @@ function App() {
   const [listaDados, setListaDados] = useState([]);
 
   const handleSubmit = (data) => {
-    console.log("data", data);
     if (!data) return;
 
     setListaDados((prevState) => {
@@ -62,7 +61,13 @@ function App() {
       <Formulario handleSubmit={handleSubmit} />
 
       {times.map((time) => (
-        <Time key={time.nome} valores={time} listaColadoradores={listaDados} />
+        <Time
+          key={time.nome}
+          valores={time}
+          listaColadoradores={listaDados.filter(
+            (dado) => dado.time === time.value
+          )}
+        />
       ))}
     </div>
   );

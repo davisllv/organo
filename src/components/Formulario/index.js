@@ -29,6 +29,11 @@ const Formulario = (props) => {
     };
     evento.preventDefault();
     props.handleSubmit(dados);
+
+    setNome("");
+    setCargo("");
+    setImagem("");
+    setTime(times[0].value);
   };
 
   return (
