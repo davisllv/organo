@@ -3,6 +3,7 @@ import "./styles.css";
 import InputTexto from "../InputTexto";
 import Select from "../Select";
 import Botao from "../Botao";
+import { times } from "../../App";
 
 function handleCriarId() {
   return `${Math.random().toString(16).slice(2)}-${Math.random()
@@ -14,7 +15,7 @@ const Formulario = (props) => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
-  const [time, setTime] = useState("gremio");
+  const [time, setTime] = useState(times[0].value);
 
   const handleSubmit = (evento) => {
     const id = handleCriarId();
@@ -64,10 +65,7 @@ const Formulario = (props) => {
           label="Time"
           valor={time}
           handleAlterar={(valor) => setTime(valor)}
-          options={[
-            { value: "gremio", descricao: "Grêmio" },
-            { value: "inter", descricao: "Inter" },
-          ]}
+          options={times}
         />
 
         <Botao>Criar Card</Botao>

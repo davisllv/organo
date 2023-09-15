@@ -18,7 +18,7 @@ function Select(props) {
           {props.options.map((option) => {
             return (
               <option key={option.value} value={option.value}>
-                {option.descricao}
+                {option.nome}
               </option>
             );
           })}
