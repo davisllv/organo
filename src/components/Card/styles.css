@@ -1,6 +1,6 @@
 .colaborador {
     width: 280px;
-    margin-right: 1.5rem;
+    margin-top: 1rem;
 }
 
 .colaborador .cabecalho {
@@ -19,7 +19,7 @@
     background-color: #FFFFFF;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0x 0px 10px 10px;
-    padding-top: 90px;
+    padding-top: 45px;
     padding-bottom: 40px;
 }
 
