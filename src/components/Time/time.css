@@ -2,6 +2,7 @@
     text-align: center;
     padding: 2rem;
     margin-bottom: 1rem;
+    max-width: 100%;
 }
 
 .time > h3 {
@@ -10,3 +11,9 @@
     padding-bottom: 0.5rem;
     border-bottom: 4px solid black;
 }
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+

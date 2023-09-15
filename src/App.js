@@ -64,9 +64,11 @@ function App() {
       {times.map((time) => (
         <Time
           key={time.nome}
+          value={time.value}
           nome={time.nome}
           corPrimaria={time.corPrimaria}
           corSecundaria={time.corSecundaria}
+          listaColadoradores={listaDados}
         />
       ))}
     </div>
