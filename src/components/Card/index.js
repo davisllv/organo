@@ -1,15 +1,15 @@
 import "./styles.css";
 
-const Card = (props) => {
+const Card = ({ user, corPrimaria }) => {
   return (
     <div className="colaborador">
-      <div className="cabecalho">
-        <img src={props.user.imagem} alt={props.user.nome} />
+      <div className="cabecalho" style={{ backgroundColor: corPrimaria }}>
+        <img src={user.imagem} alt={user.nome} />
       </div>
 
       <div className="rodape">
-        <h4>{props.user.nome}</h4>
-        <h5>{props.user.cargo}</h5>
+        <h4>{user.nome}</h4>
+        <h5>{user.cargo}</h5>
       </div>
     </div>
   );

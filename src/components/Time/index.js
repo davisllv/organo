@@ -15,7 +15,9 @@ const Time = ({ valores, listaColadoradores }) => {
 
         <div className="cards">
           {listaColadoradores.map((col) => {
-            return <Card key={col.id} user={col} />;
+            return (
+              <Card key={col.id} user={col} corPrimaria={valores.corPrimaria} />
+            );
           })}
         </div>
       </section>
