@@ -68,6 +68,11 @@ function App() {
           listaColadoradores={listaDados.filter(
             (dado) => dado.time === time.value
           )}
+          onClick={(ev) => {
+            const newList = listaDados.filter((dado) => dado.id !== ev.id);
+
+            setListaDados(newList);
+          }}
         />
       ))}
 

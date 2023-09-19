@@ -1,8 +1,8 @@
 import "./styles.css";
 
-const Card = ({ user, corPrimaria }) => {
+const Card = ({ user, corPrimaria, onClick }) => {
   return (
-    <div className="colaborador">
+    <div className="colaborador" onClick={() => onClick(user)}>
       <div className="cabecalho" style={{ backgroundColor: corPrimaria }}>
         <img src={user.imagem} alt={user.nome} />
       </div>

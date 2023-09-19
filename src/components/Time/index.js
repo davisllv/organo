@@ -1,7 +1,8 @@
+import { useEffect, useState } from "react";
 import Card from "../Card";
 import "./time.css";
 
-const Time = ({ valores, listaColadoradores }) => {
+const Time = ({ valores, listaColadoradores, onClick }) => {
   return (
     listaColadoradores &&
     listaColadoradores.length > 0 && (
@@ -19,7 +20,12 @@ const Time = ({ valores, listaColadoradores }) => {
         <div className="cards">
           {listaColadoradores.map((col) => {
             return (
-              <Card key={col.id} user={col} corPrimaria={valores.corPrimaria} />
+              <Card
+                key={col.id}
+                user={col}
+                corPrimaria={valores.corPrimaria}
+                onClick={onClick}
+              />
             );
           })}
         </div>
