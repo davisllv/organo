@@ -7,7 +7,10 @@ const Time = ({ valores, listaColadoradores }) => {
     listaColadoradores.length > 0 && (
       <section
         className="time"
-        style={{ backgroundColor: valores.corSecundaria }}
+        style={{
+          backgroundImage: "url(/images/fundo.png)",
+          backgroundColor: valores.corSecundaria,
+        }}
       >
         <h3 style={{ borderColor: `${valores.corPrimaria}` }}>
           {valores.nome}

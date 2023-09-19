@@ -3,6 +3,7 @@
     padding: 2rem;
     margin-bottom: 1rem;
     max-width: 100%;
+    background-blend-mode: multiply;
 }
 
 .time > h3 {
