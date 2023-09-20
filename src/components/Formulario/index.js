@@ -17,7 +17,7 @@ const Formulario = (props) => {
   const [idTime, setIdTime] = useState(props.times[0].id);
 
   const [nomeTime, setNomeTime] = useState("");
-  const [corTime, setCorTime] = useState("");
+  const [corTime, setCorTime] = useState("#ffffff");
 
   const handleSubmit = (evento) => {
     const dados = {
@@ -45,7 +45,7 @@ const Formulario = (props) => {
     props.handleSubmitTeam(dados);
 
     setNomeTime("");
-    setCorTime("");
+    setCorTime("#ffffff");
   };
 
   return (

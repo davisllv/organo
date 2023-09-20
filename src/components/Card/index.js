@@ -1,13 +1,21 @@
 import "./styles.css";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
-const Card = ({ user, corPrimaria, onClick }) => {
+const Card = ({ user, corPrimaria, onDelete, onChange }) => {
+  const handleChange = () => {
+    onChange(user.id);
+  };
+
+  const propsPadrao = {
+    size: 25,
+    onClick: handleChange,
+  };
   return (
     <div className="colaborador">
       <AiFillCloseCircle
         size={25}
         className="del-button"
-        onClick={() => onClick(user.id)}
+        onClick={() => onDelete(user.id)}
       />
 
       <div className="cabecalho" style={{ backgroundColor: corPrimaria }}>
@@ -17,6 +25,14 @@ const Card = ({ user, corPrimaria, onClick }) => {
       <div className="rodape">
         <h4>{user.nome}</h4>
         <h5>{user.cargo}</h5>
+
+        <div className="favoritar">
+          {user.liked ? (
+            <AiFillHeart {...propsPadrao} color="red" />
+          ) : (
+            <AiOutlineHeart {...propsPadrao} />
+          )}
+        </div>
       </div>
     </div>
   );

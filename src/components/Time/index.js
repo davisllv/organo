@@ -3,7 +3,7 @@ import Card from "../Card";
 import "./time.css";
 import hexToRgba from "hex-to-rgba";
 
-const Time = ({ valores, listaColadoradores, onClick }) => {
+const Time = ({ valores, listaColadoradores, onDelete, onChange }) => {
   const [corPrimaria, setCorPrimaria] = useState(valores.cor);
   return (
     listaColadoradores &&
@@ -31,7 +31,8 @@ const Time = ({ valores, listaColadoradores, onClick }) => {
                 key={col.id}
                 user={col}
                 corPrimaria={corPrimaria}
-                onClick={onClick}
+                onDelete={onDelete}
+                onChange={onChange}
               />
             );
           })}

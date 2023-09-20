@@ -43,6 +43,7 @@ function App() {
   const [listaDados, setListaDados] = useState([
     {
       id: v4(),
+      liked: false,
       nome: "Davi da Silva dos Santos",
       idTime: times[0].id,
       cargo: "Desenvolvedor",
@@ -50,6 +51,7 @@ function App() {
     },
     {
       id: v4(),
+      liked: false,
       nome: "Arthur Nascimento",
       idTime: times[1].id,
       cargo: "Desenvolvedor",
@@ -85,6 +87,15 @@ function App() {
     alert(`Colaborador Removido com Sucesso!`);
   };
 
+  const handleChange = (id) => {
+    const newList = listaDados.map((data) => {
+      if (data.id === id) data.liked = !data.liked;
+      return data;
+    });
+
+    setListaDados(newList);
+  };
+
   return (
     <div className="App">
       <Banner />
@@ -102,7 +113,8 @@ function App() {
           listaColadoradores={listaDados.filter(
             (dado) => dado.idTime === time.id
           )}
-          onClick={handleDeletar}
+          onDelete={handleDeletar}
+          onChange={handleChange}
         />
       ))}
 
