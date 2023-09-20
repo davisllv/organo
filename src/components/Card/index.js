@@ -1,8 +1,11 @@
 import "./styles.css";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 const Card = ({ user, corPrimaria, onClick }) => {
   return (
-    <div className="colaborador" onClick={() => onClick(user)}>
+    <div className="colaborador">
+      <AiFillCloseCircle className="del-button" onClick={() => onClick(user)} />
+
       <div className="cabecalho" style={{ backgroundColor: corPrimaria }}>
         <img src={user.imagem} alt={user.nome} />
       </div>

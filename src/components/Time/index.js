@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Card from "../Card";
 import "./time.css";
 

@@ -55,6 +55,12 @@ function App() {
     });
   };
 
+  const handleDeletar = (valor) => {
+    const newList = listaDados.filter((dado) => dado.id !== valor.id);
+
+    setListaDados(newList);
+  };
+
   return (
     <div className="App">
       <Banner />
@@ -68,11 +74,7 @@ function App() {
           listaColadoradores={listaDados.filter(
             (dado) => dado.time === time.value
           )}
-          onClick={(ev) => {
-            const newList = listaDados.filter((dado) => dado.id !== ev.id);
-
-            setListaDados(newList);
-          }}
+          onClick={handleDeletar}
         />
       ))}
 
