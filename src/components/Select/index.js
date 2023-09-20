@@ -9,7 +9,6 @@ function Select(props) {
 
       <div>
         <select
-          value={props.valor}
           required={props.required}
           name={props.name}
           onChange={(evento) => props.handleAlterar(evento.target.value)}
@@ -17,7 +16,7 @@ function Select(props) {
         >
           {props.options.map((option) => {
             return (
-              <option key={option.value} value={option.value}>
+              <option key={option.id} value={option.id}>
                 {option.nome}
               </option>
             );

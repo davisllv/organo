@@ -5,7 +5,6 @@ import hexToRgba from "hex-to-rgba";
 
 const Time = ({ valores, listaColadoradores, onClick }) => {
   const [corPrimaria, setCorPrimaria] = useState(valores.cor);
-
   return (
     listaColadoradores &&
     listaColadoradores.length > 0 && (
