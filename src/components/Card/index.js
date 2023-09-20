@@ -7,7 +7,7 @@ const Card = ({ user, corPrimaria, onClick }) => {
       <AiFillCloseCircle
         size={25}
         className="del-button"
-        onClick={() => onClick(user)}
+        onClick={() => onClick(user.id)}
       />
 
       <div className="cabecalho" style={{ backgroundColor: corPrimaria }}>

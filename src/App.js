@@ -71,7 +71,7 @@ function App() {
 
   const handleDeletar = (valor) => {
     setListaDados((prevState) => {
-      const newArray = prevState.filter((d) => d.id === valor.id);
+      const newArray = prevState.filter((d) => d.id !== valor);
 
       return newArray;
     });
