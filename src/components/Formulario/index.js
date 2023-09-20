@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./styles.css";
-import InputTexto from "../InputTexto";
+import Input from "../Input";
 import Select from "../Select";
 import Botao from "../Botao";
 
@@ -15,6 +15,9 @@ const Formulario = (props) => {
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
   const [idTime, setIdTime] = useState(props.times[0].id);
+
+  const [nomeTime, setNomeTime] = useState("");
+  const [corTime, setCorTime] = useState("");
 
   const handleSubmit = (evento) => {
     const dados = {
@@ -33,12 +36,24 @@ const Formulario = (props) => {
     setIdTime(props.times[0].id);
   };
 
+  const handleSubmitTeam = (evento) => {
+    const dados = {
+      nome: nomeTime,
+      cor: corTime,
+    };
+    evento.preventDefault();
+    props.handleSubmitTeam(dados);
+
+    setNomeTime("");
+    setCorTime("");
+  };
+
   return (
-    <>
-      <section className="divisor">
+    <div style={{ display: "flex", flexDirection: "row" }}>
+      <section className="divisor" style={{ width: "45%" }}>
         <h1>Preencha os Dados para Criar o Card do Colaborador</h1>
         <form className="formulario" onSubmit={handleSubmit}>
-          <InputTexto
+          <Input
             required
             label="Nome"
             placeholder="Digite seu nome"
@@ -46,7 +61,7 @@ const Formulario = (props) => {
             valor={nome}
             handleAoDigitar={(valor) => setNome(valor)}
           />
-          <InputTexto
+          <Input
             label="Cargo"
             required
             placeholder="Digite seu cargo"
@@ -54,7 +69,7 @@ const Formulario = (props) => {
             valor={cargo}
             handleAoDigitar={(valor) => setCargo(valor)}
           />
-          <InputTexto
+          <Input
             label="Image"
             placeholder="Informe Endereço da Sua Image"
             name="imagem"
@@ -73,7 +88,31 @@ const Formulario = (props) => {
           <Botao>Criar Card</Botao>
         </form>
       </section>
-    </>
+
+      <section className="divisor" style={{ width: "45%" }}>
+        <h1>Preencha os Dados para Criar um Time</h1>
+        <form className="formulario" onSubmit={handleSubmitTeam}>
+          <Input
+            required
+            label="Nome do Time"
+            placeholder="Digite o nome do Time"
+            name="nomeTime"
+            valor={nomeTime}
+            handleAoDigitar={(valor) => setNomeTime(valor)}
+          />
+
+          <Input
+            type="color"
+            label="Cor"
+            name="corTime"
+            valor={corTime}
+            handleAoDigitar={(valor) => setCorTime(valor)}
+          />
+
+          <Botao>Criar Time</Botao>
+        </form>
+      </section>
+    </div>
   );
 };
 
