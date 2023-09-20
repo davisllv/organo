@@ -7,7 +7,7 @@ import Rodape from "./components/Rodape";
 import { v4 } from "uuid";
 
 function App() {
-  const [times] = useState([
+  const [times, setTimes] = useState([
     {
       id: v4(),
       nome: "Front-End",
@@ -58,25 +58,42 @@ function App() {
   ]);
 
   const handleSubmit = (data) => {
-    console.log(data);
-
-    if (!data) return;
+    if (!data) {
+      alert("Dados Incorretos!");
+      return;
+    }
     data.id = v4();
 
     setListaDados([...listaDados, data]);
+
+    alert("Colaborador Adicionado com Sucesso!");
+  };
+
+  const handleSubmitTeam = (data) => {
+    if (!data) {
+      alert("Dados Incorretos!");
+      return;
+    }
+    data.id = v4();
+
+    setTimes([...times, data]);
+    alert("Time Adicionado com Sucesso!");
   };
 
   const handleDeletar = (valor) => {
     setListaDados(listaDados.filter((d) => d.id !== valor));
+    alert(`Colaborador Removido com Sucesso!`);
   };
 
-  console.log("listaDados", listaDados);
-  console.log("times", times);
   return (
     <div className="App">
       <Banner />
 
-      <Formulario handleSubmit={handleSubmit} times={times} />
+      <Formulario
+        handleSubmit={handleSubmit}
+        handleSubmitTeam={handleSubmitTeam}
+        times={times}
+      />
 
       {times.map((time) => (
         <Time
