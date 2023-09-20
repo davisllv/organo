@@ -4,7 +4,7 @@ import InputTexto from "../InputTexto";
 import Select from "../Select";
 import Botao from "../Botao";
 
-function handleCriarId() {
+export function handleCriarId() {
   return `${Math.random().toString(16).slice(2)}-${Math.random()
     .toString(16)
     .slice(2)}`;

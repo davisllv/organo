@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Card from "../Card";
 import "./time.css";
+import hexToRgba from "hex-to-rgba";
 
-const Time = ({ valores, listaColadoradores, onClick, onChangeColor }) => {
+const Time = ({ valores, listaColadoradores, onClick }) => {
+  const [corPrimaria, setCorPrimaria] = useState(valores.cor);
+
   return (
     listaColadoradores &&
     listaColadoradores.length > 0 && (
@@ -9,17 +13,16 @@ const Time = ({ valores, listaColadoradores, onClick, onChangeColor }) => {
         className="time"
         style={{
           backgroundImage: "url(/images/fundo.png)",
-          backgroundColor: valores.corSecundaria,
+          backgroundColor: hexToRgba(corPrimaria, 0.4),
         }}
       >
-        <h3 style={{ borderColor: `${valores.corPrimaria}` }}>
-          {valores.nome}
-        </h3>
+        <h3 style={{ borderColor: `${corPrimaria}` }}>{valores.nome}</h3>
 
         <input
           type="color"
+          defaultValue={corPrimaria}
           className="input-color"
-          onChange={(ev) => onChangeColor(ev.target.value, valores)}
+          onChange={(ev) => setCorPrimaria(ev.target.value)}
         />
 
         <div className="cards">
@@ -28,7 +31,7 @@ const Time = ({ valores, listaColadoradores, onClick, onChangeColor }) => {
               <Card
                 key={col.id}
                 user={col}
-                corPrimaria={valores.corPrimaria}
+                corPrimaria={corPrimaria}
                 onClick={onClick}
               />
             );
