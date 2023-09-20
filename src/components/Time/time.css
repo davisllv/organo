@@ -4,6 +4,7 @@
     margin-bottom: 1rem;
     max-width: 100%;
     background-blend-mode: multiply;
+    position: relative;
 }
 
 .time > h3 {
@@ -17,5 +18,11 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.input-color {
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }
 
