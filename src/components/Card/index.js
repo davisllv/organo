@@ -4,7 +4,11 @@ import { AiFillCloseCircle } from "react-icons/ai";
 const Card = ({ user, corPrimaria, onClick }) => {
   return (
     <div className="colaborador">
-      <AiFillCloseCircle className="del-button" onClick={() => onClick(user)} />
+      <AiFillCloseCircle
+        size={25}
+        className="del-button"
+        onClick={() => onClick(user)}
+      />
 
       <div className="cabecalho" style={{ backgroundColor: corPrimaria }}>
         <img src={user.imagem} alt={user.nome} />
